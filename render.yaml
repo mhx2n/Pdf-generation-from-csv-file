@@ -2,7 +2,7 @@ services:
   - type: worker
     name: quiz-bot
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
     startCommand: python quiz_bot.py
     envVars:
       - key: BOT_TOKEN
