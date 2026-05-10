@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: quiz-pdf-bot
+    env: python
+    plan: free
+    pythonVersion: "3.11.9"
+    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
+    startCommand: python quiz_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
